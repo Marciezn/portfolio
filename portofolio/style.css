@@ -1,0 +1,177 @@
+:root {
+    --bg-dark: #001b35;
+    --bg-card: #002b55;
+    --accent-blue: #00a2ff;
+    --text-white: #ffffff;
+    --text-gray: #a0a0a0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: rgba(0, 79, 152, 0.95);
+    position: fixed;
+    top: 0; width: 100%; z-index: 1000;
+}
+
+.logo { font-weight: 700; font-size: 1.2rem; }
+nav ul { display: flex; list-style: none; }
+nav ul li { margin: 0 15px; }
+nav ul li a { color: white; text-decoration: none; font-size: 13px; font-weight: 400; }
+nav ul li a:hover { color: var(--accent-blue); }
+
+.btn-talk {
+    background: var(--accent-blue);
+    border: none; color: white;
+    padding: 8px 20px; border-radius: 5px;
+    font-weight: 600; cursor: pointer;
+}
+
+/* HERO */
+.hero {
+    display: flex; align-items: center;
+    padding: 150px 8% 80px; min-height: 90vh;
+}
+
+.hero-content { flex: 1; }
+.badge-top { color: var(--accent-blue); font-size: 12px; font-weight: bold; border-left: 3px solid var(--accent-blue); padding-left: 10px; }
+h1 { font-size: 3.5rem; line-height: 1.2; margin: 20px 0; }
+.highlight { color: var(--accent-blue); }
+.hero-content p { color: var(--text-gray); margin-bottom: 30px; max-width: 500px; }
+
+.btn-primary {
+    background: var(--accent-blue); color: white;
+    padding: 15px 30px; border-radius: 50px;
+    border: none; font-weight: bold; cursor: pointer; margin-right: 20px;
+}
+
+.social-icons { display: inline-flex; gap: 15px; vertical-align: middle; }
+.social-icons a { color: white; font-size: 1.2rem; }
+
+.hero-image img { width: 100%; max-width: 450px; }
+
+/* SKILLS BAR */
+.skills-bar {
+    display: flex; justify-content: space-around;
+    padding: 40px 8%; background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.skill-item { font-weight: 600; font-size: 14px; color: var(--text-gray); }
+
+/* ABOUT */
+.about { display: flex; align-items: center; padding: 100px 8%; gap: 50px; }
+.about-img img { border-radius: 20px; width: 100%; max-width: 400px; }
+.badge { background: var(--bg-card); color: var(--accent-blue); padding: 5px 15px; border-radius: 5px; font-size: 12px; }
+.stats { display: flex; gap: 30px; margin-top: 30px; }
+.stat-item h3 { font-size: 2rem; color: var(--text-white); }
+.stat-item p { font-size: 12px; color: var(--text-gray); }
+
+/* PROJECT GRID */
+.container { padding: 80px 8%; }
+.project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-top: 40px; }
+.project-card { background: var(--bg-card); padding: 15px; border-radius: 15px; transition: 0.3s; position: relative; }
+.project-card:hover { transform: translateY(-10px); outline: 1px solid var(--accent-blue); }
+.card-img img { width: 100%; border-radius: 10px; }
+.card-content { margin-top: 15px; position: relative; }
+.card-content h4 { font-size: 14px; margin-top: 5px; }
+.play-btn { position: absolute; right: 0; bottom: 0; font-size: 25px; color: white; }
+
+/* DOTS */
+.dots { text-align: center; margin-top: 30px; }
+.dot { height: 8px; width: 8px; background: #555; display: inline-block; border-radius: 50%; margin: 0 5px; }
+.dot.active { width: 20px; border-radius: 10px; background: var(--accent-blue); }
+
+/* --- Tambahkan/Update Bagian Ini di style.css --- */
+
+/* Recent Project Section - Background Biru Terang */
+.projects {
+    background-color: #00213f; /* Biru yang lebih terang dan hidup */
+    padding: 80px 0;
+    position: relative;
+}
+
+
+
+.projects h2 {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Card di dalam Project (dibuat agak gelap agar kontras dengan BG terang) */
+.projects .project-card {
+    background: #003a70; 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Footer Section - Warna Berbeda (Sangat Gelap) */
+footer {
+    background-color: #003a70; /* Hitam Navy yang sangat pekat */
+    padding: 60px 0 30px;
+    border-top: 2px solid var(--accent-blue); /* Garis biru terang di atas footer */
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #ffffff;
+    font-size: 14px;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+/* Tambahan: Hover effect pada link footer */
+footer p i {
+    color: var(--accent-blue);
+    margin-right: 5px;
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .project-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero, .about { flex-direction: column; text-align: center; }
+    nav ul { display: none; }
+}
+
+/* Container pembungkus agar kartu yang diluar layar tidak kelihatan */
+.slider-wrapper {
+    overflow: hidden;
+    width: 100%;
+    margin-top: 30px;
+}
+
+
+.project-card {
+    width: 100%;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: repeat(6, 100%);
+        width: 600%; /* 6 kartu menyamping satu-satu */
+    }
+}
+
+.dot {
+    cursor: pointer;
+    transition: 0.3s;
+}
